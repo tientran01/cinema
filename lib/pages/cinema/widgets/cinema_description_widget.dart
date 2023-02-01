@@ -10,6 +10,20 @@ class CinemaDescriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Padding(
+          padding: EdgeInsets.only(
+            right: 20.0,
+            left: 20.0,
+            top: 10.0,
+          ),
+          child: Text(
+            "The Walking Dead Drama, Action, Adventure, Fantasy, Science Fiction, Horror, Thriller",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
         Container(
           padding: const EdgeInsets.symmetric(
             vertical: 10.0,

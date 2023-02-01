@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_version370/pages/cinema/cinema_detail_screen.dart';
+import 'package:flutter_version370/pages/home/home_screen.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const CinemaDetailScreen(),
+      home: const HomeScreen(),
     );
   }
 }
