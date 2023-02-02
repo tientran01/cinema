@@ -7,43 +7,31 @@ class CinemaDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: [
-          SliverAppBar(
-            backgroundColor: Colors.transparent,
-            expandedHeight: MediaQuery.of(context).size.height / 3,
-            leading: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              ),
-            ),
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                AppImage.background,
-                fit: BoxFit.cover,
-              ),
-              title: Card(
-                child: Container(
-                  padding: const EdgeInsets.all(10.0),
-                  child: const Text(
-                    "The Walking Dead Drama, Action, Adventure, Fantasy, \nScience Fiction, Horror, Thriller",
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
-              ),
+    return CustomScrollView(
+      shrinkWrap: true,
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverAppBar(
+          backgroundColor: Colors.white,
+          expandedHeight: MediaQuery.of(context).size.height / 3,
+          leading: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
             ),
           ),
-          const SliverToBoxAdapter(
-            child: CinemaDescriptionWidget(),
+          flexibleSpace: FlexibleSpaceBar(
+            background: Image.asset(
+              AppImage.background,
+              fit: BoxFit.cover,
+            ),
           ),
-        ],
-      ),
+        ),
+        const SliverToBoxAdapter(
+          child: CinemaDescriptionWidget(),
+        )
+      ],
     );
   }
 }
