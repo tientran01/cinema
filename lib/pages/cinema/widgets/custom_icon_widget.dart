@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_version370/components/dimens.dart';
+
+import '../../../components/constants.dart';
 
 class CustomIconWidget extends StatelessWidget {
   final Color bgColor;
@@ -20,7 +23,7 @@ class CustomIconWidget extends StatelessWidget {
         InkWell(
           onTap: onTap,
           child: Container(
-            padding: const EdgeInsets.all(10.0),
+            padding: Constants.edgeInsetAll10,
             decoration: BoxDecoration(
               color: bgColor,
               shape: BoxShape.circle,
@@ -28,7 +31,7 @@ class CustomIconWidget extends StatelessWidget {
             child: Icon(
               icon,
               color: Colors.white70,
-              size: 30.0,
+              size: Dimens.size30,
             ),
           ),
         ),

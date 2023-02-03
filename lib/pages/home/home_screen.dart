@@ -1,11 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_version370/components/app_image.dart';
-import 'package:flutter_version370/components/constants.dart';
-import 'package:flutter_version370/components/dimens.dart';
-import 'package:flutter_version370/pages/base/widget/custom_bottom_navigation.dart';
-import 'package:flutter_version370/pages/base/widget/device_helper.dart';
+import 'package:flutter_version370/configs/locale/generated/l10n.dart';
 
-import '../cinema/cinema_detail_screen.dart';
+import 'screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,9 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: const SingleChildScrollView(
-        child: CinemaDetailScreen(),
-      ),
+      body: const CinemaDetailScreen(),
       bottomNavigationBar: Container(
         height: DeviceHelper.shared.isTablet
             ? width * Dimens.zeroPointTwelve
@@ -50,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: width * .02),
+          padding: EdgeInsets.symmetric(horizontal: width * .03),
           itemCount: 4,
           itemBuilder: (context, index) => CustomBottomNavigationWidget(
             selectedIndex: index,
@@ -60,16 +53,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 currentIndex = index;
               });
             },
-            titles: const [
-              'ticket',
-              'cinema',
-              'video',
-              'menu',
+            titles: [
+              S.current.movie,
+              S.current.theater,
+              S.current.popcorn_drink,
+              S.current.me,
             ],
             icons: const [
               AppImage.icTicket,
-              AppImage.icCinema,
               AppImage.icVideoPlayer,
+              AppImage.icCinema,
               AppImage.icProfile,
             ],
           ),

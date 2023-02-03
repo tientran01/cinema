@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:ui' as ui;
 
+import 'package:flutter/material.dart';
+
 class DeviceHelper {
   static final shared = DeviceHelper._internal();
 
@@ -34,5 +36,13 @@ class DeviceHelper {
       }
     }
     return false;
+  }
+
+  double heightScreen(BuildContext context) {
+    return MediaQuery.of(context).size.height;
+  }
+
+  double widthScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width;
   }
 }
