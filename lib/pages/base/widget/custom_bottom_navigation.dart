@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_version370/components/app_color.dart';
 import 'package:flutter_version370/components/dimens.dart';
-
 import 'device_helper.dart';
 
 class CustomBottomNavigationWidget extends StatelessWidget {
@@ -34,22 +33,22 @@ class CustomBottomNavigationWidget extends StatelessWidget {
             curve: Curves.fastLinearToSlowEaseIn,
             width: checkCurrentIndex
                 ? width * Dimens.zeroPointThirtyTwo
-                : width * .18,
+                : width * Dimens.zeroPointEighteen,
             alignment: Alignment.center,
             child: AnimatedContainer(
               duration: const Duration(seconds: 1),
               curve: Curves.fastLinearToSlowEaseIn,
               height: checkCurrentIndex
                   ? DeviceHelper.shared.isTablet
-                      ? width * 0.1
-                      : width * 0.12
+                      ? width * Dimens.opacity1
+                      : width * Dimens.zeroPointTwelve
                   : Dimens.size0,
               width: checkCurrentIndex
                   ? width * Dimens.zeroPointThirtyTwo
                   : Dimens.size0,
               decoration: BoxDecoration(
                 color: checkCurrentIndex
-                    ? AppColor.debianRed.withOpacity(0.2)
+                    ? AppColor.debianRed.withOpacity(Dimens.opacity2)
                     : Colors.transparent,
                 borderRadius: BorderRadius.circular(
                   Dimens.size50,
@@ -60,7 +59,9 @@ class CustomBottomNavigationWidget extends StatelessWidget {
           AnimatedContainer(
             duration: const Duration(seconds: 1),
             curve: Curves.fastLinearToSlowEaseIn,
-            width: checkCurrentIndex ? width * .31 : width * .18,
+            width: checkCurrentIndex
+                ? width * Dimens.zeroPointThirtyOne
+                : width * Dimens.zeroPointEighteen,
             alignment: Alignment.center,
             child: Stack(
               children: [
