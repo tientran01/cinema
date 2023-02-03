@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_version370/components/app_image.dart';
-import 'package:flutter_version370/pages/cinema/widgets/custom_icon_widget.dart';
-import 'package:flutter_version370/pages/cinema/widgets/title_section_widget.dart';
+import 'package:flutter_version370/pages/cinema/widgets/widget.dart';
 
 class CinemaDescriptionWidget extends StatelessWidget {
   const CinemaDescriptionWidget({Key? key}) : super(key: key);
@@ -9,6 +6,7 @@ class CinemaDescriptionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
           padding: EdgeInsets.only(
